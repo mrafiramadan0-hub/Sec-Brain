@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "21752903075",
+    "project_id": "secbrain-c134d",
+    "storage_bucket": "secbrain-c134d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21752903075:android:a83e37d8f594e4e3749616",
+        "android_client_info": {
+          "package_name": "com.secbrain.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21752903075-ve8hog095fbgv6c01a5klj8o3p7ct2d4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.secbrain.app",
+            "certificate_hash": "83b3316f132298e145f6b5536db3cb32383d5d3d"
+          }
+        },
+        {
+          "client_id": "21752903075-8baok3dtprehvqp9rs3v7se5sb2j65ug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAanZUsy_OuedJGya4Fvt988stOU3h7gzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21752903075-8baok3dtprehvqp9rs3v7se5sb2j65ug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

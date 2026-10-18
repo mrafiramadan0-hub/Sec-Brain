@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f6" />
+    <title>SecBrain — Personal Memory Bank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="Navigasi utama">
+            <a class="brand" href="#dashboard" aria-label="SecBrain beranda"><span
+                    class="brand-mark">S</span><span>SecBrain</span></a>
+            <div class="workspace-label">Workspace personal</div>
+            <nav class="primary-nav">
+                <button class="nav-item active" data-view="dashboard"><span
+                        class="nav-icon">⌂</span><span>Overview</span></button>
+                <button class="nav-item" data-view="tasks"><span class="nav-icon">✓</span><span>Tasks &
+                        Agenda</span><span class="nav-count">7</span></button>
+                <button class="nav-item" data-view="notes"><span class="nav-icon">▤</span><span>Knowledge
+                        Base</span></button>
+                <button class="nav-item" data-view="finance"><span
+                        class="nav-icon">↗</span><span>Finance</span></button>
+                <button class="nav-item" data-view="memories"><span class="nav-icon">✦</span><span>Memory
+                        Log</span></button>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="focus-card">
+                    <span class="focus-kicker">FOCUS OF THE DAY</span>
+                    <strong>Make space for<br>what matters.</strong>
+                    <span class="focus-line"></span>
+                    <small>3 of 5 priorities complete</small>
+                </div>
+                <button class="nav-item muted"><span class="nav-icon">⚙</span><span>Settings</span></button>
+                <div class="profile"><span class="avatar">AR</span><span><strong>Aditya Ramadhan</strong><small>Personal
+                            account</small></span><span class="profile-more">•••</span></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="breadcrumb"><span>Wednesday, September 23, 2026</span><span
+                        class="breadcrumb-dot"></span><span class="muted-text">Good morning, Aditya</span></div>
+                <div class="top-actions"><button class="icon-button" aria-label="Cari"
+                        id="searchToggle">⌕</button><button class="icon-button" aria-label="Notifikasi">♧<span
+                            class="notification-dot"></span></button><button class="button button-dark" id="quickAdd">+
+                        <span>Quick add</span></button></div>
+            </header>
+
+            <section class="page-heading screen-dashboard" id="dashboard">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL MEMORY BANK</p>
+                    <h1>Good morning, Aditya<span class="heading-period">.</span></h1>
+                    <p class="heading-copy">A clear mind starts with a clear place for everything.</p>
+                </div>
+                <div class="heading-date"><span>WED</span><strong>23</strong><small>SEP 2026</small></div>
+            </section>
+
+            <div class="search-bar hidden" id="searchBar"><span>⌕</span><input id="globalSearch" type="search"
+                    placeholder="Search tasks, notes, memories..." /><button id="closeSearch">Esc</button></div>
+            <div class="screen-heading hidden" id="screenHeading">
+                <div>
+                    <p class="eyebrow" id="screenEyebrow">WORKSPACE</p>
+                    <h1 id="screenTitle">Tasks & Agenda</h1>
+                    <p class="heading-copy" id="screenDescription">Keep every commitment visible and moving.</p>
+                </div><button class="back-dashboard" data-view="dashboard">← Overview</button>
+            </div>
+
+            <section class="stats-grid screen-dashboard" aria-label="Ringkasan hari ini">
+                <article class="stat-card stat-primary">
+                    <div class="stat-top"><span>Today’s focus</span><span class="stat-menu">•••</span></div>
+                    <div class="stat-number">5 <small>items</small></div>
+                    <div class="progress-track"><span style="width: 62%"></span></div>
+                    <div class="stat-footer"><span>62% completed</span><span>+2 this week</span></div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-top"><span>Open tasks</span><span class="stat-icon green">✓</span></div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-footer"><span>4 high priority</span><span class="trend-up">↗ 18%</span></div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-top"><span>Monthly spend</span><span class="stat-icon amber">↗</span></div>
+                    <div class="stat-number">Rp 2.4<span class="unit">jt</span></div>
+                    <div class="stat-footer"><span>of Rp 4.5 jt budget</span><span>53%</span></div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-top"><span>Memory log</span><span class="stat-icon coral">✦</span></div>
+                    <div class="stat-number">28</div>
+                    <div class="stat-footer"><span>12 this year</span><span>View log →</span></div>
+                </article>
+            </section>
+
+            <div class="content-grid">
+                <section class="panel agenda-panel screen-tasks" id="tasks">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">AGENDA</p>
+                            <h2>Today’s tasks</h2>
+                        </div>
+                        <div class="heading-tools"><button class="text-button active">Today</button><button
+                                class="text-button">Week</button><button class="more-button">•••</button></div>
+                    </div>
+                    <div class="task-list" id="taskList">
+                        <label class="task-row completed"><input type="checkbox" checked><span
+                                class="checkmark">✓</span><span class="task-content"><strong>Review proposal — Studio
+                                    Nara</strong><small><span class="tag tag-coral">Work</span> Due
+                                    09:00</small></span><span class="task-priority priority-high">High</span></label>
+                        <label class="task-row"><input type="checkbox"><span class="checkmark"></span><span
+                                class="task-content"><strong>Submit research methodology</strong><small><span
+                                        class="tag tag-blue">University</span> Due 13:00</small></span><span
+                                class="task-priority priority-high">High</span></label>
+                        <label class="task-row"><input type="checkbox"><span class="checkmark"></span><span
+                                class="task-content"><strong>Team sync & sprint planning</strong><small><span
+                                        class="tag tag-purple">Organization</span> Due 15:30</small></span><span
+                                class="task-priority priority-medium">Medium</span></label>
+                        <label class="task-row"><input type="checkbox"><span class="checkmark"></span><span
+                                class="task-content"><strong>Pick up laundry</strong><small><span
+                                        class="tag tag-green">Personal</span> Due 18:00</small></span><span
+                                class="task-priority priority-low">Low</span></label>
+                    </div>
+                    <button class="add-task" id="addTask">+ Add a task</button>
+                </section>
+
+                <section class="panel calendar-panel screen-tasks">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">SEPTEMBER 2026</p>
+                            <h2>Calendar</h2>
+                        </div>
+                        <div class="calendar-nav"><button aria-label="Bulan sebelumnya">‹</button><button
+                                aria-label="Bulan berikutnya">›</button></div>
+                    </div>
+                    <div class="calendar-week">
+                        <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+                    </div>
+                    <div class="calendar-days"><span
+                            class="muted-day">31</span><span>1</span><span>2</span><span>3</span><span
+                            class="has-dot">4<i></i></span><span>5</span><span>6</span><span>7</span><span
+                            class="has-dot">8<i></i></span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span
+                            class="has-dot">16<i></i></span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span
+                            class="today">23</span><span
+                            class="has-dot">24<i></i></span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span
+                            class="has-dot">30<i></i></span><span class="muted-day">1</span><span
+                            class="muted-day">2</span><span class="muted-day">3</span><span class="muted-day">4</span>
+                    </div>
+                    <div class="calendar-legend"><span><i class="dot coral-dot"></i> Deadline</span><span><i
+                                class="dot green-dot"></i> Event</span></div>
+                </section>
+
+                <section class="panel matrix-panel screen-tasks">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">PRIORITY MAP</p>
+                            <h2>Eisenhower matrix</h2>
+                        </div><button class="more-button">•••</button>
+                    </div>
+                    <div class="matrix">
+                        <div class="matrix-axis y-axis">Urgent <span>Not urgent</span></div>
+                        <div class="matrix-axis x-axis"><span>Important</span><span>Not important</span></div>
+                        <div class="quadrant q-red"><strong>Do first</strong><small>2 tasks</small><span>Finish
+                                methodology</span><span>Reply to client</span></div>
+                        <div class="quadrant q-yellow"><strong>Schedule</strong><small>3 tasks</small><span>Read UX
+                                research</span><span>Plan next sprint</span></div>
+                        <div class="quadrant q-blue"><strong>Delegate</strong><small>1 task</small><span>Book
+                                venue</span></div>
+                        <div class="quadrant q-gray"><strong>Eliminate</strong><small>1 task</small><span>Sort
+                                downloads</span></div>
+                    </div>
+                </section>
+
+                <section class="panel notes-panel screen-notes" id="notes">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">KNOWLEDGE BASE</p>
+                            <h2>Recent notes</h2>
+                        </div><button class="outline-button" id="newNote">+ New note</button>
+                    </div>
+                    <div class="note-list">
+                        <article class="note-item"><span class="note-type type-meeting">MEETING</span>
+                            <h3>Client discovery — Karsa Studio</h3>
+                            <p>“Focus on making the onboarding feel less like a form...”</p><time>Yesterday ·
+                                14:20</time>
+                        </article>
+                        <article class="note-item"><span class="note-type type-idea">IDEA</span>
+                            <h3>Things to explore for thesis</h3>
+                            <p>Look into the relationship between ambient...</p><time>Sep 20, 2026 · 21:48</time>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <section class="bottom-section screen-finance screen-memories" id="finance">
+                <div class="section-title">
+                    <div>
+                        <p class="eyebrow">KEEP AN EYE ON IT</p>
+                        <h2>Personal overview</h2>
+                    </div><button class="view-all">View all <span>→</span></button>
+                </div>
+                <div class="overview-grid">
+                    <article class="overview-card finance-card screen-finance">
+                        <div class="overview-label"><span class="overview-icon">↗</span><span>Finance
+                                snapshot</span><button>•••</button></div>
+                        <div class="balance-row">
+                            <div><small>Balance this month</small><strong>Rp 6.8 jt</strong></div><span
+                                class="balance-up">+12.4%</span>
+                        </div>
+                        <div class="spend-bar"><span style="width:53%"></span></div>
+                        <div class="spend-labels"><span>Spent <strong>Rp 2.4 jt</strong></span><span>Budget <strong>Rp
+                                    4.5 jt</strong></span></div>
+                    </article>
+                    <article class="overview-card savings-card screen-finance">
+                        <div class="overview-label"><span class="overview-icon">◎</span><span>Savings
+                                goals</span><button>•••</button></div>
+                        <div class="goal-row">
+                            <div class="goal-ring"><svg viewBox="0 0 40 40">
+                                    <circle cx="20" cy="20" r="16"></circle>
+                                    <circle class="ring-value" cx="20" cy="20" r="16"></circle>
+                                </svg><span>68%</span></div>
+                            <div><strong>New MacBook Pro</strong><small>Rp 10.2 jt <em>of Rp 15 jt</em></small></div>
+                        </div>
+                        <div class="goal-foot"><span>Target Dec 2026</span><span>On track ↗</span></div>
+                    </article>
+                    <article class="overview-card memory-card screen-memories" id="memories">
+                        <div class="overview-label"><span class="overview-icon">✦</span><span>Latest
+                                memory</span><button>•••</button></div>
+                        <div class="memory-row">
+                            <div class="memory-cover">INTER<br>STELLAR</div>
+                            <div><span class="note-type type-film">FILM</span><strong>Interstellar</strong><small>★★★★★
+                                    <em>Completed Sep 21</em></small></div>
+                        </div>
+                        <p class="memory-quote">“Love is the one thing that transcends time and space.”</p>
+                    </article>
+                </div>
+            </section>
+            <footer>SecBrain <span>·</span> Your mind, organized.</footer>
+        </main>
+    </div>
+    <div class="modal hidden" id="quickModal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <form class="modal-card" id="quickForm">
+            <div class="modal-heading">
+                <div>
+                    <p class="eyebrow">QUICK ENTRY</p>
+                    <h2>Add something new</h2>
+                </div><button type="button" class="close-modal" id="closeModal">×</button>
+            </div><label>Title<input name="title" required placeholder="What needs your attention?" /></label>
+            <div class="form-row"><label>Due date<input name="due" type="date"
+                        value="2026-09-23" /></label><label>Priority<select name="priority">
+                        <option>High</option>
+                        <option selected>Medium</option>
+                        <option>Low</option>
+                    </select></label></div><label>Category<select name="category">
+                    <option>Personal</option>
+                    <option>University</option>
+                    <option>Work</option>
+                    <option>Organization</option>
+                </select></label><button class="button button-dark full-width" type="submit">Add to today</button>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

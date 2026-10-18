@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SecBrain</string>
+    <string name="widget_description">Pantau to-do list, checklist aktif, dan target harian SecBrain langsung dari Layar Utama.</string>
+</resources>
